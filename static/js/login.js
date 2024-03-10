@@ -29,7 +29,7 @@ googleSignInBtn.addEventListener('click', () => {
       console.log(`Signed in as ${user.displayName}`);
       userDisplay.textContent = `Welcome, ${user.displayName}!`;
       const useremail = user.email;
-      fetch('http://127.0.0.1:8000/signin', {
+      fetch('https://newsanalyser-8lf9.onrender.com/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
