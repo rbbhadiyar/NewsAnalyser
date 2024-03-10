@@ -116,15 +116,18 @@ def words():
                 heading varchar,
                 url varchar,
                 Num_links INT,
-                num_stop_words INT);''')
+                num_stop_words INT,
+                name text,
+                email_id varchar,
+                );''')
         
         email_id = users[-1][1]
         name = users[-1][0]
         cur.execute(
-            '''INSERT INTO Data (Words ,Sentences,POS_Tags,Paragraphs,links,heading,url,numlinks,num_stop_words,name,email_id) \
+            '''INSERT INTO Data (Words ,Sentences,POS_Tags,Paragraphs,links,heading,url,num_links,num_stop_words,name,email_id) \
                 VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);''',
                 (word,sent,a,para2,link_list,heading,text_input,len_links,num_stop_words,name,email_id))
-        cur.execute('''SELECT Words ,Sentences,POS_Tags,Paragraphs,heading,numlinks,num_stop_words FROM Data ORDER BY ID DESC LIMIT 1''')
+        cur.execute('''SELECT Words ,Sentences,POS_Tags,Paragraphs,heading,num_links,num_stop_words FROM Data ORDER BY ID DESC LIMIT 1''')
         data = cur.fetchall()
     
         cur.close()
@@ -166,7 +169,7 @@ def check():
 @app.route("/view/<id>",methods = ["GET","POST"])
 def view(id):
     cur = conn.cursor()
-    cur.execute('''SELECT Words ,Sentences,POS_Tags,Paragraphs,heading, numlinks,num_stop_words FROM Data where id = %s ''',(id,))
+    cur.execute('''SELECT Words ,Sentences,POS_Tags,Paragraphs,heading, num_links,num_stop_words FROM Data where id = %s ''',(id,))
     data = cur.fetchall()
 
     conn.commit()
@@ -178,7 +181,7 @@ def view(id):
 @app.route("/viewhistory",methods = ["GET","POST"])
 def history():
     cur = conn.cursor()
-    cur.execute('''SELECT ID, URL,email_id FROM Data where email_id=%s ''',(users[-1][1],))
+    cur.execute('''SELECT ID, URL, email_id FROM Data where email_id=%s ''',(users[-1][1],))
     urls = cur.fetchall()
 
     conn.commit()
@@ -189,7 +192,7 @@ def history():
 @app.route("/viewhistory2/<id>",methods = ["GET","POST"])
 def viewhistory2(id):
     cur = conn.cursor()
-    cur.execute('''SELECT Words ,Sentences,POS_Tags,Paragraphs,heading, numlinks,num_stop_words FROM Data where email_id = %s and id =%s''',(users[-1][1],id,))
+    cur.execute('''SELECT Words ,Sentences,POS_Tags,Paragraphs,heading, num_links,num_stop_words FROM Data where email_id = %s and id =%s''',(users[-1][1],id,))
     data = cur.fetchall()
     
     conn.commit()
