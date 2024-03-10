@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 import re
 from nltk.corpus import stopwords
-
+nltk.download('all')
 
 app = Flask(__name__,static_folder='static')
 # Making connection to database
