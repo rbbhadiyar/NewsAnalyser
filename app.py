@@ -16,7 +16,7 @@ from werkzeug.urls import url_quote
 
 app = Flask(__name__,static_folder='static')
 # Making connection to database
-conn = psycopg2.connect(database="news_native",user = 'postgres', password ='Ram@0916', host='localhost')
+conn = psycopg2.connect(database="news_native",user = 'rambhanwar', password ='vFKCLdNYDXQP9YDUA8kO31IKjfUkoJcY', host='dpg-cnmp0cgcmk4c73ait64g-a')
 cur = conn.cursor()
 
 #Making Connections with Different Webpages
