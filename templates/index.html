@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Native</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #00ffdd;
+        }
+        form{
+            height: 110px;
+        }
+        .container {
+           
+            max-width: 1100px;
+            margin: 70px auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        h1 {
+            
+            font-size: 70px;
+            color: #333;
+            margin-bottom: -10px;
+        }
+        img {
+            width: 250px;
+            height: 170px;
+            margin-bottom: -50px;
+        }
+        p { 
+            font-weight: bold;
+            font-size: 30px;
+            color: #fc0000;
+            margin-bottom: 20px;
+
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #00000075;
+        }
+    
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .btn:hover {
+            background-color: #00000075;
+        }
+        .inputtext{
+            height: 35px;
+            width: 70%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+    
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <img src="/static/img/Logo.png" alt="News Native Logo">
+        <h1>News Native</h1>
+        <p>Analyse your News here</p>
+        <form action="/words" method="post">
+            <input type="text" name="news-url" placeholder="Enter URL of News article" class = "inputtext" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <div>
+            <a class="btn" href="/viewhistory">View History</a>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

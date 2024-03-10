@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/js/login.js" defer type="module"></script>
+    <title>News Native Login</title>
+    <title>Your Website</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+        
+            }
+            header {
+                background-color: #00ffdd;
+                color: #000000;
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-right: -40px;
+            }
+            header img {
+                height: 50px;
+                width: auto;
+                margin-left: 30px;
+            }
+            .logo-text {
+                font-size: 50px;
+                font-weight: bold;
+                margin-left: 50px;
+
+            }
+
+            #login-form, #dashboard {
+                margin-left: 500px;
+                width: 500px;
+                height: 150px;
+                margin-top: 100px;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+            .btn {
+                padding: 10px 20px;
+                margin-right: 15px;
+                background-color: #007bff;
+                color:white;
+                border-radius:6px;
+                cursor: pointer;
+                text-decoration:none;
+            }
+            .btn:hover {
+                background-color: #0000005f;
+            }
+            h2{
+                text-align: center;
+            }
+            p{
+                text-align: center;
+            }
+            .footer {
+                margin-top: 165px;
+                background-color: #00ffdd;
+                padding: 20px;
+                text-align: center;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+            }
+            
+        </style>
+</head>
+<body >
+    <header>
+        <div>
+            <img src="/static/img/logo1.png" alt="Website Logo">
+            <span class="logo-text">News Native</span>
+        </div> 
+    </header>
+    <div id="login-form">
+      <h2>Login with Google</h2>
+      <button id="google-sign-in-btn" class="btn">Sign in with Google</button>
+    </div>
+    
+    <div id="dashboard" style="display: none;">
+      <h2>Welcome!</h2>
+      <p id="user-info"></p>
+      <button onclick="window.location.href='/index'" class="btn" >Analyze News</button>
+      <button id="logout-btn" class="btn">Logout</button>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 News Native. All rights reserved.<br> <br> <p>Contact Us: su-23030@sitare.org</p>
+    </div>
+    
+</body>
+</html>

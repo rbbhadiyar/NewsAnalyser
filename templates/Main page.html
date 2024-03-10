@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+    
+        }
+        header {
+            background-color: #00ffdd;
+            color: #000000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            height: 50px;
+            width: auto;
+            margin-left: 30px;
+        }
+        .logo-text {
+            font-size: 50px;
+            font-weight: bold;
+            margin-left: 50px;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin-right: 15px;
+            background-color: #00ffdd;
+            color: #000000;
+            border-radius:6px;
+            cursor: pointer;
+            text-decoration:none;
+        }
+        .btn:hover {
+            background-color: #00000075;
+        }
+        h1{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+        .container1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 110vh; /* Adjust as needed */
+        }
+
+        img {
+            max-width: 1000px;
+            max-height: 1200px;
+        }
+        .p1{
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .p2{
+            font-style: italic;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #00ffdd;
+            padding: 20px;
+            text-align: center;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body >
+    <header>
+        <div>
+            <img src="/static/img/logo1.png" alt="Website Logo">
+            <span class="logo-text">News Native</span>
+        </div>
+        <div>
+            <button onclick="window.location.href = '/login'" class="btn">Login</button>
+            <button onclick="window.location.href = '/admin'" class="btn" >Admin Login</button>
+        </div>
+    </header>
+    <div>
+        <p class="p1">For Hindustan Times </p>
+        <p class="p2">Login to Analyse News</p>
+
+        <div class="container1">
+            
+            <img src="/static/img/im1.jpg" alt="Description Image">
+        </div>
+        <h1>About News Native</h1>
+        <p>
+            News Native is a sophisticated online platform designed to empower users with insightful analysis of news articles.
+            By simply entering the URL of the article they wish to analyze, users gain access to valuable information. 
+            This includes the precise count of sentences and words within the article, as well as detailed part-of-speech (POS) tagging.
+            Additionally, the platform offers relevant supplementary information such as embedded links, providing users with a overall understanding of the article's context.
+            Furthermore, News Native conveniently extracts and presents article headings, facilitating easier navigation and comprehension. 
+            Moreover, users benefit with a clutter-free reading experience, as the platform intelligently removes any advertisements or distractions, ensuring a seamless analytical process."
+
+        </p>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 News Native. All rights reserved.<br> <br> <p>Contact Us: su-23030@sitare.org</p>
+    </div>
+      
+</body>
+</html>
