@@ -12,6 +12,7 @@ from nltk.corpus import stopwords
 nltk.download('all')
 from werkzeug.urls import url_quote
 
+
 app = Flask(__name__,static_folder='static')
 # Making connection to database
 conn = psycopg2.connect(database="news_native",user = 'postgres', password ='Ram@0916', host='localhost')
@@ -173,7 +174,7 @@ def view(id):
     return render_template('result.html',data = data)
 
 #For User History
-@app.route("/viewhistory",methods = ["POST"])
+@app.route("/viewhistory",methods = ["GET","POST"])
 def history():
     cur = conn.cursor()
     cur.execute('''SELECT ID, URL,email_id FROM Data where email_id=%s ''',(users[-1][1],))
@@ -184,7 +185,7 @@ def history():
 
     return render_template("user_history.html",urls = urls)
 
-@app.route("/viewhistory2/<id>",methods = ["POST"])
+@app.route("/viewhistory2/<id>",methods = ["GET","POST"])
 def viewhistory2(id):
     cur = conn.cursor()
     cur.execute('''SELECT Words ,Sentences,POS_Tags,Paragraphs,heading, numlinks,num_stop_words FROM Data where email_id = %s and id =%s''',(users[-1][1],id,))
