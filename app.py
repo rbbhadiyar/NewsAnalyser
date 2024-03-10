@@ -118,8 +118,7 @@ def words():
                 Num_links INT,
                 num_stop_words INT,
                 name text,
-                email_id varchar,
-                );''')
+                email_id varchar);''')
         
         email_id = users[-1][1]
         name = users[-1][0]
