@@ -13,6 +13,7 @@ nltk.download('all')
 from werkzeug.urls import url_quote
 
 
+
 app = Flask(__name__,static_folder='static')
 # Making connection to database
 conn = psycopg2.connect(database="news_native",user = 'postgres', password ='Ram@0916', host='localhost')
@@ -131,7 +132,7 @@ def words():
         return render_template('result.html',data = data)
     
 users = []
-@app.route("/signin", methods=["POST"])
+@app.route("/signin", methods=["GET","POST"])
 def signin():
     if request.method == "POST":
         data = request.json  
@@ -142,7 +143,7 @@ def signin():
         return jsonify({"message": "User signed in successfully"}), 200
 
 #For Admin History
-@app.route("/admin",methods = ["POST"])
+@app.route("/admin",methods = ["GET","POST"])
 def admin():
     return render_template('admin.html')
 @app.route("/check",methods = ["POST","GET"])
